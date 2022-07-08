@@ -127,27 +127,33 @@ To start the server use the following command:
 It will start a server running on port 8080.
 
 ## Postman
+```
+Creating a Participant 
 
-Packing Eggs
-
-POST http://localhost:8080/rest/eggboxes
+POST http://localhost:8080/rest/participants 
 {
-   "farmerId":"eggtrackingf1@gmail.com",
-   "packingTimestamp":"20191224151230",
+   "id":"SH1",
+   "name":"Shaki",
+}
+```
+```
+Creating an Item 
+
+POST http://localhost:8080/rest/items 
+{
+   "itemID":"SB2",
+   "description":"Surfboard 2",
    "quantity":"30"
 }
 ```
 ```
 Creating a Transfer Request
 
-POST http://localhost:8080/rest/shipments
+POST http://localhost:8080/rest/shipment
 {
-   "farmerId":"eggtrackingf1@gmail.com",
-   "shipperId":"eggtrackings1@gmail.com",
-   "distributorId":"eggtrackingd1@gmail.com",
-   "shipmentCreation":"20191124154531",
-   "min":"1",
-   "max":"30"
+   "participantId":"SH1",
+   "itemId":"SB2",
+   "deliveryDate":"28022021",
 }
 ```
 
