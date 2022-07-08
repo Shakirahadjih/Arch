@@ -224,7 +224,9 @@ class InventoryContract extends Contract {
     let transfer = new transfer(id, itemId, deliveryDate);
 
     // object die wallet owner toekent
-    await ctx.clientIdentity.putState(key ,keyItem, participant.serialise())
+    await ctx.clientIdentity.putState(key, participant.serialise())
+    await ctx.clientIdentity.putState(keyItem, item.serialise())
+
 
     // Return the newly created transfer
     return JSON.stringify(transfer);
